@@ -1,11 +1,9 @@
 import { Image, StyleSheet} from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
 
-export default function HomeScreen() {
+
+export default function Calendar() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#FCE38A', dark: '#e7e7b4' }}
@@ -15,10 +13,6 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome To EduEase!</ThemedText>
-        <HelloWave />
-      </ThemedView>
     </ParallaxScrollView>
   );
 }

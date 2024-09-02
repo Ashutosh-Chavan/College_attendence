@@ -13,6 +13,15 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
+
+          tabBarStyle: {
+          height: 60, // Increase the height of the tab bar
+           // Optional: add padding at the bottom
+        },
+          tabBarLabelStyle: {
+          fontSize: 12, // Adjust font size if needed
+          marginBottom: 9, // Adjust spacing between the icon and label
+        },
       }}>
       <Tabs.Screen
         name="index"
@@ -23,15 +32,35 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="explore"
+        <Tabs.Screen
+        name="calendar"
         options={{
-          title: 'Explore',
+          title: 'Calendar',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'calendar' : 'calendar-outline'} color={color} />
           ),
         }}
       />
+       <Tabs.Screen
+        name="announcement"
+        options={{
+          title: 'Announcement',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'notifications' : 'notifications-outline'} color={color} />
+          ),
+        }}
+      />
+          <Tabs.Screen
+        name="settings"
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'settings' : 'settings-outline'} color={color} />
+          ),
+        }}
+      />
+
+      
     </Tabs>
   );
 }
