@@ -9,10 +9,16 @@ export default function HomeScreen() {
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#FCE38A', dark: '#e7e7b4' }}
       headerImage={
-        <Image
-          source={require('@/assets/images/logo.png')}
-          style={styles.reactLogo}
-        />
+        <View style={styles.headerImagesContainer}>
+          <Image
+            source={require('@/assets/images/logo.png')}
+            style={styles.reactLogo}
+          />
+          <Image
+            source={require('@/assets/images/profile.png')} // Add your profile image here
+            style={styles.profileImage}
+          />
+        </View>
       }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Hello Hemant Bhatt</ThemedText>
@@ -47,6 +53,23 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  headerImagesContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  reactLogo: {
+    height: 40,
+    width: 190,
+    marginTop:40,
+  },
+  profileImage: {
+    height: 45,
+    width: 45,
+    marginTop:40,
+    borderRadius: 50, // Make the image circular
+    marginLeft: 130, // Add space between logo and profile image
+  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -68,7 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: 'center',
     marginBottom: 20,
-    fontWeight: 'bold', // Make text bold
+    fontWeight: 'bold',
   },
   rowContainer: {
     marginVertical: 20,
@@ -81,20 +104,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   firstRow: {
-    backgroundColor: '#f9f9f9', // Light gray background for alternate rows
+    backgroundColor: '#f9f9f9',
   },
   secondRow: {
-    backgroundColor: '#fff', // White background for alternate rows
+    backgroundColor: '#fff',
   },
   cell: {
     fontSize: 18,
     flex: 1,
-  },
-  reactLogo: {
-    height: 40,
-    width: 190,
-    bottom: 20,
-    left: 20,
-    position: 'absolute',
   },
 });
