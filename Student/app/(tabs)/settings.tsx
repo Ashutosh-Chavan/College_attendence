@@ -17,12 +17,18 @@ export default function LoginScreen() {
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#FCE38A', dark: '#e7e7b4' }}
-      headerImage={
+    headerBackgroundColor={{ light: '#FCE38A', dark: '#e7e7b4' }}
+    headerImage={
+      <View style={styles.headerImagesContainer}>
         <Image
           source={require('@/assets/images/logo.png')}
           style={styles.reactLogo}
         />
+        <Image
+          source={require('@/assets/images/profile.png')} // Add your profile image here
+          style={styles.profileImage}
+        />
+      </View>
       }>
       <View style={styles.container}>
         {/* Add the image above the title */}
@@ -73,12 +79,22 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#f9f9f9',
   },
+  headerImagesContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
   reactLogo: {
     height: 40,
     width: 190,
-    bottom: 20,
-    left: 20,
-    position: 'absolute',
+    marginTop:40,
+  },
+  profileImage: {
+    height: 45,
+    width: 45,
+    marginTop:40,
+    borderRadius: 50, // Make the image circular
+    marginLeft: 130, // Add space between logo and profile image
   },
   studentLogo: {
     width: 100,

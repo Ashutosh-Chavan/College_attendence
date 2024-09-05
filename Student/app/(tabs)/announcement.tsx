@@ -67,10 +67,16 @@ export default function Announcement() {
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.headerContainer}>
-        <Image
-          source={require('@/assets/images/logo.png')}
-          style={styles.reactLogo}
-        />
+        <View style={styles.headerImagesContainer}>
+          <Image
+            source={require('@/assets/images/logo.png')}
+            style={styles.reactLogo}
+          />
+          <Image
+            source={require('@/assets/images/profile.png')}
+            style={styles.profileImage}
+          />
+        </View>
       </View>
       <TabView
         navigationState={{ index, routes }}
@@ -94,15 +100,25 @@ const styles = StyleSheet.create({
   headerContainer: {
     height: 80,
     backgroundColor: '#FCE38A',
-    justifyContent: 'center',
     alignItems: 'center',
+  },
+  headerImagesContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between', // Add space between the logo and profile image
+    paddingHorizontal: 20,
+    width: '100%',
   },
   reactLogo: {
     height: 40,
     width: 190,
-    bottom: 0,
-    left: 20,
-    position: 'absolute'
+    marginTop: 40,
+  },
+  profileImage: {
+    height: 45,
+    width: 45,
+    marginTop: 40,
+    borderRadius:50, // Make the image circular (half of height/width)
   },
   announcementContainer: {
     flex: 1,

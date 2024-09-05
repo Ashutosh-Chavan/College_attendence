@@ -44,10 +44,16 @@ export default function Calendar() {
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#FCE38A', dark: '#e7e7b4' }}
       headerImage={
-        <Image
-          source={require('@/assets/images/logo.png')}
-          style={styles.reactLogo}
-        />
+        <View style={styles.headerImagesContainer}>
+          <Image
+            source={require('@/assets/images/logo.png')}
+            style={styles.reactLogo}
+          />
+          <Image
+            source={require('@/assets/images/profile.png')} // Add your profile image here
+            style={styles.profileImage}
+          />
+        </View>
       }>
       <View style={styles.container}>
         <TimeTable />
@@ -81,11 +87,21 @@ const styles = StyleSheet.create({
     color: '#333', // Darker text color for contrast
     textAlign: 'center', // Center align text
   },
+  headerImagesContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
   reactLogo: {
     height: 40,
     width: 190,
-    bottom: 20,
-    left: 20,
-    position: 'absolute',
+    marginTop:40,
+  },
+  profileImage: {
+    height: 45,
+    width: 45,
+    marginTop:40,
+    borderRadius: 50, // Make the image circular
+    marginLeft: 130, // Add space between logo and profile image
   },
 });
