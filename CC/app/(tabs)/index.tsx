@@ -21,7 +21,7 @@ export default function HomeScreen() {
         </View>
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Hello Hemant Bhatt</ThemedText>
+        <ThemedText type="title">Hello Ms.Pooja Patil</ThemedText>
         <HelloWave />
       </ThemedView>
 
@@ -29,18 +29,18 @@ export default function HomeScreen() {
         <Text style={styles.welcomeText}>Welcome to the Class Advisor Page</Text>
         <View style={styles.rowContainer}>
           <View style={[styles.row, styles.firstRow]}>
-            <Text style={styles.cell}>SE A</Text>
+            <Text style={styles.cell}>TE A</Text>
             <Button title="Go to SE A" onPress={() => alert('Navigate to SE A page')} />
           </View>
           <View style={[styles.row, styles.secondRow]}>
-            <Text style={styles.cell}>SE B</Text>
+            <Text style={styles.cell}>TE B</Text>
             <Button
               title="Go to SE B"
               onPress={() => alert('Navigate to SE B page')} // Placeholder for navigation action
             />
           </View>
           <View style={[styles.row, styles.firstRow]}>
-            <Text style={styles.cell}>SE C</Text>
+            <Text style={styles.cell}>TE C</Text>
             <Button
               title="Go to SE C"
               onPress={() => alert('Navigate to SE C page')} // Placeholder for navigation action
