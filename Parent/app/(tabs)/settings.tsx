@@ -1,9 +1,20 @@
-import { Image, StyleSheet, View} from 'react-native';
-
+import React, { useState } from 'react';
+import { View, TextInput, Button, Text, Alert, StyleSheet, Image } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 
+export default function LoginScreen() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-export default function settings() {
+  const handleLogin = () => {
+    // Perform login logic here
+    if (username === 'testuser' && password === 'password123') {
+      Alert.alert('Login Successful', `Welcome, ${username}!`);
+    } else {
+      Alert.alert('Login Failed', 'Invalid username or password');
+    }
+  };
+
   return (
     <ParallaxScrollView
     headerBackgroundColor={{ light: '#FCE38A', dark: '#e7e7b4' }}
@@ -19,15 +30,54 @@ export default function settings() {
         />
       </View>
       }>
+      <View style={styles.container}>
+        {/* Add the image above the title */}
+        <Image
+          source={require('@/assets/images/logo2.jpg')}
+          style={styles.studentLogo}
+        />
+        <Text style={styles.title}>Student Login</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Admission Number"
+          value={username}
+          onChangeText={setUsername}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+        <Button title="Login" onPress={handleLogin} />
+      </View>
     </ParallaxScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 16,
+    backgroundColor: '#f9f9f9',
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 32,
+  },
+  input: {
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    marginBottom: 12,
+    paddingHorizontal: 8,
+  },
+  button: {
+    backgroundColor: '#f9f9f9',
   },
   headerImagesContainer: {
     flexDirection: 'row',
@@ -45,5 +95,12 @@ const styles = StyleSheet.create({
     marginTop:40,
     borderRadius: 50, // Make the image circular
     marginLeft: 130, // Add space between logo and profile image
+  },
+  studentLogo: {
+    width: 100,
+    height: 100,
+    alignSelf: 'center',
+    marginBottom: 16, 
+    marginTop: 120
   },
 });
